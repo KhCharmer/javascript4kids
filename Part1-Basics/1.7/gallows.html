@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>"Шибениця"!</title>
+	</head>
+	<body>
+		<h1>"Шибениця"!</h1>
+
+		<script>
+		
+		var words = [
+		"javascript",
+		"money",
+		"amazing",
+		"pancake"
+		];
+
+		var word = words[Math.floor(Math.random() * words.length)];
+		var wordLen = word.length;
+		var answerArray = [];
+		for (var i = 0; i < wordLen; i++) {
+			answerArray[i] = "_";
+		}
+
+		var remainingLetters = wordLen;
+
+		while(remainingLetters > 0) {
+			alert(answerArray.join(" "));
+
+			var guess = prompt("Guess a letter, or click Cancel to stop playing");
+			if (guess === null) {
+				break;
+			} else if (guess.length !== 1) {
+				alert("Please enter a single letter.");
+			} else {
+				for (var j = 0; j < wordLen; j++) {
+					if (word[j] === guess && answerArray[j] === "_") {
+						answerArray[j] = guess;
+						remainingLetters--;
+					}
+				}
+			}
+		}
+
+		alert(answer.Array.join(" "));
+		alert("Good job! The answer was " + word);
+		
+		</script>
+	</body>
+</html>
